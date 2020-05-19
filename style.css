@@ -93,7 +93,7 @@ background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 .firstBoardSquares{
     height: 150px;
     width:150px;
-    background-color:white;
+    background-color:white
     margin:10px;
     color:white;
     border-radius:5px;

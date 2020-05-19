@@ -98,11 +98,12 @@ function answerDisplayer(){
     console.log(score)
     colorRemover()
 }
-else{rightOrWrong.innerHTML = "Too Bad" + "<br />" + "Your Score:" + " " + score;
+else{rightOrWrong.innerHTML = "Too Bad"
+
+ + "<br />" + "Your Score:" + " " + score;
 secondGameTable.style.display = "none";
  checkButton.style.display = "none";
  playAgain.style.display = "flex";
-
 
 }
 }
@@ -121,13 +122,12 @@ function colorRemover(){
   let toArrayMaker = [...document.querySelectorAll('.secondBoardSquares')]
   let toArrayChecker = toArrayMaker.map(item =>{
     if(item.classList.contains("flip")){
-      secondGameTable.style.display= "none";
       item.classList.remove("flip")
+      secondGameTable.style.display= "none";
       checkButton.style.display = "none";
       setTimeout(function(){
-
-        rightOrWrong.innerHTML = " "; 
-        patterGen();
+rightOrWrong.innerHTML = " "; 
+    
         
       },2000)
 
@@ -135,7 +135,10 @@ function colorRemover(){
 
   })
 
-  
+  setTimeout(function(){
+    
+  patterGen();
+  },3000);
 
 };
 
