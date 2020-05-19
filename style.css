@@ -1,0 +1,121 @@
+
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+#playButton{
+    width:200px;
+    height:100px;
+    background-color:none;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    font-size:30px;
+    border:10px solid #EEFBFF;
+    border-radius:5px;
+    font-family: "Righteous", cursive;
+    transition: background-color 1s ease;
+    color:white;
+}
+
+#playButton:hover{
+    background-color:#EEFBFF;
+    color:blue;
+}
+
+#correct{
+    font-family: "Righteous", cursive;
+    color:white;
+    font-size:40px;
+}
+
+#checkButton{
+    display:none;
+    width:150px;
+    height:75px;
+    background-color:none;
+    justify-content: center;
+    align-items:center;
+    font-size:30px;
+    border:10px solid #EEFBFF;
+    border-radius:5px;
+    font-family: "Righteous", cursive;
+    transition: background-color 1s ease;
+    color:white;
+}
+
+#replay{
+    display:none;
+    width:170px;
+    height:75px;
+    background-color:none;
+    justify-content: center;
+    align-items:center;
+    font-size:30px;
+    border:10px solid #EEFBFF;
+    border-radius:5px;
+    font-family: "Righteous", cursive;
+    transition: background-color 1s ease;
+    color:white;
+
+}
+
+#checkButton:hover{
+    background-color:#EEFBFF;
+    color:blue;
+}
+#gamearea{
+    height:500px;
+    width: 500px;
+    display:none;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+
+
+   
+}
+#game-area2{
+    height:500px;
+    width: 500px;
+    display:none;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+   }
+
+   
+.firstBoardSquares{
+    height: 150px;
+    width:150px;
+    background-color:white;
+    margin:10px;
+    color:white;
+    border-radius:5px;
+    }
+
+.secondBoardSquares{
+height: 150px;
+width:150px;
+background-color:white;
+margin:10px;
+color:white;
+border-radius:5px;
+}
+
+
+
+
+.row{
+flex-direction:column;
+}
+
+.flip{
+background-color:#79FAC5;
+color:#79FAC5;
+}

@@ -1,0 +1,180 @@
+<html>
+<head>
+<style>
+body{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+flex-direction:row;}
+.yoyo{
+height: 100px;
+width:100px;
+background-color:blue;
+margin:5px;
+}
+.game-area{
+height:500px;
+width: 500px;
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+background-color:pink;
+border:1px solid black;
+}
+
+.toto{
+height: 100px;
+width:100px;
+background-color:blue;
+margin:5px;
+}
+.row{
+flex-direction:column;
+}
+
+.flip{
+background-color:black;
+}
+  </style>
+</head>
+
+<body>
+
+
+
+
+
+<h2 id="run"></h2>
+
+<div class="game-area">
+<div class = "row">
+<div class ="toto" >1</div>
+<div class ="toto" >2</div>
+<div class ="toto" >3</div>
+</div>
+<div class = "row">
+<div class ="toto" >4</div>
+<div class ="toto" >5</div>
+<div class ="toto" >6</div>
+</div>
+<div class = "row">
+<div class ="toto" >7</div>
+<div class ="toto" >8</div>
+<div class ="toto" >9</div>
+</div>
+<div class = "row">
+<div class ="toto" >10</div>
+<div class ="toto" >11</div>
+<div class ="toto" >12</div>
+</div>
+<button onclick ="patterGen()">hehe</button>
+</div>
+<div class ="game-area">
+<div class="row">
+<div class ="yoyo" >1</div>
+<div class ="yoyo">2</div>
+<div class ="yoyo">3</div>
+</div>
+<div class="row">
+<div class ="yoyo" >4</div>
+<div class ="yoyo">5</div>
+<div class ="yoyo">6</div>
+</div>
+<div class="row">
+<div class ="yoyo" >7</div>
+<div class ="yoyo">8</div>
+<div class ="yoyo">9</div>
+</div>
+<div class="row">
+<div class ="yoyo" >10</div>
+<div class ="yoyo">11</div>
+<div class ="yoyo">12</div>
+</div>
+<button onclick="colorCheckMatcher()">check</button>
+<button onclick="mmm()">maybe</button>
+</div>
+
+
+
+<script>
+let squares = document.querySelectorAll(".yoyo");
+let tsquare = document.getElementsByClassName("toto");
+let answer ;
+let answer2;
+
+
+/* random pattern generator on first board */
+function patterGen(){
+let tsquareIterations = [tsquare[0],tsquare[1],tsquare[2],tsquare[3],tsquare[4],tsquare[5],tsquare[6],tsquare[7],tsquare[8],tsquare[9],tsquare[10],tsquare[11]];
+let arrCopy = tsquareIterations.slice();
+let ranIdx
+let resArr = []
+let ranLen = Math.floor(Math.random() * arrCopy.length) + 1
+
+for(i=0; i < ranLen; i++){
+   ranIdx = Math.floor(Math.random() * arrCopy.length)
+   resArr.push(arrCopy.splice(ranIdx,1)[0])  
+}
+
+/*this turns the color of the squares */
+resArr.forEach(card => {
+
+card.style.backgroundColor = "black";
+});
+/*this gets the inner hmtl for each square */
+let numberReader = resArr.map(item =>{
+return item.innerHTML;
+})
+/* this sorts the array */
+let numberReaderSorter =  numberReader.sort((a, b) => a - b);
+answer = numberReaderSorter;
+console.log(answer);
+}
+
+/*------------------------------------------------------------*/
+
+
+
+
+/* check for matcher */
+
+function colorCheckMatcher(){
+    
+let toArrayMaker = [...document.querySelectorAll('.yoyo')]
+
+let toArrayChecker = toArrayMaker.map(item =>{
+if(item.classList.contains("flip")){
+return item.innerHTML}});
+let filtered = toArrayChecker.filter(function (el) {
+  return el != null;
+});
+
+answer2 = filtered;
+console.log(answer2);
+}
+/*-----------*/
+function mmm(){
+    if (JSON.stringify(answer2) === JSON.stringify(answer)) {
+    console.log('They are equal!');
+}
+else{console.log("nope")}
+}
+
+/*-----------------------------------------------------------*/
+/*  color toggler */
+
+function colorTurner(){
+this.classList.toggle("flip");
+this.classList.contains(".flip")
+
+}
+/* event listener for toggling colors */
+squares.forEach(yo => yo.addEventListener("click",colorTurner));
+
+
+
+</script>
+</body>
+
+</html>
