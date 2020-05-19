@@ -7,7 +7,14 @@ align-items:center;
 flex-direction:column;
 background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
+#directions{
+    font-family: "Righteous", cursive;
+    font-size:40px;
+    color:white;
+    margin-bottom:100px;
+    display:flex;
 
+}
 #playButton{
     width:200px;
     height:100px;
@@ -60,11 +67,15 @@ background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
     border:10px solid #EEFBFF;
     border-radius:5px;
     font-family: "Righteous", cursive;
-    transition: background-color 1s ease;
+    transition: background-color .5s ease;
     color:white;
 
 }
 
+#replay:hover{
+    background-color:#EEFBFF;
+    color:blue;
+}
 #checkButton:hover{
     background-color:#EEFBFF;
     color:blue;
