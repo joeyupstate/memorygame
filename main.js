@@ -77,7 +77,7 @@ function patterGen() {
     firstGameTable.style.display = "none";
     secondGameTable.style.display = "flex";
     checkButton.style.display = "flex";
-  }, 5000);
+  }, 4000);
 }
 
 /*------------------------------------------------------------*/
@@ -139,7 +139,7 @@ function colorRemover() {
 
   setTimeout(function () {
     patterGen();
-  }, 3000);
+  }, 2000);
 }
 
 /* event listener for toggling colors */

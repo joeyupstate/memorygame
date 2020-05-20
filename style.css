@@ -9,10 +9,11 @@ background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 #directions{
     font-family: "Righteous", cursive;
-    font-size:40px;
+    font-size:4vh;
     color:white;
     margin-bottom:100px;
     display:flex;
+    text-align:center;
 
 }
 #playButton{
