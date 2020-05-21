@@ -13,21 +13,17 @@ let playAgain = document.getElementById("replay");
 let rightOrWrong = document.getElementById("correct");
 let direct = document.getElementById("directions");
 let score = 0;
-
-/* random pattern generator on first board */
+let level = 0;
+let slowtime = 0;
+/* event listeners for buttons */
 checkButton.addEventListener("click",colorCheckMatcher);
 playAgain.addEventListener("click",startANew);
 startButton.addEventListener("click", patterGen);
 
-function smith() {
-  firstSquares.map((item) => {
-    if (item.classList.contains("flip")) {
-      item.classList.remove("flip");
-    }
-  });
-}
 
+/* random pattern generator on first board */
 function patterGen() {
+  hardGame()
   let firstsquareIterations = [
     firstSquares[0],
     firstSquares[1],
@@ -65,7 +61,7 @@ function patterGen() {
     let numberReaderSorter = numberReader.sort((a, b) => a - b);
     answer = numberReaderSorter;
     console.log(answer);
-  }, 1000);
+  }, 500);
   firstGameTable.style.display = "flex";
   direct.style.display ="none";
   startButton.style.display = "none";
@@ -77,7 +73,7 @@ function patterGen() {
     firstGameTable.style.display = "none";
     secondGameTable.style.display = "flex";
     checkButton.style.display = "flex";
-  }, 4000);
+  }, slowtime);
 }
 
 /*------------------------------------------------------------*/
@@ -147,4 +143,34 @@ secondSquares.forEach((yo) => yo.addEventListener("click", colorTurner));
 
 function startANew() {
   window.location.reload();
+}
+
+function hardGame(){
+  if( score < 1){
+    slowtime = "4000";
+  }
+else if ( score < 4 ){
+  slowtime = "3700";
+}
+else if (score < 6){
+  slowtime = "2500";
+}
+else if (score < 8){
+  slowtime = "1800";
+}
+else if (score < 9){
+  slowtime = "1500";
+}
+else if (score < 10){
+  slowtime = "1200";
+}
+else if (score < 11){
+  slowtime = "1000";
+}
+else if (score < 11){
+  slowtime = "900";
+}
+else if (score < 12){
+  slowtime = "800";
+}
 }
